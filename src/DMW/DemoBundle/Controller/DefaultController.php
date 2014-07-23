@@ -1,6 +1,7 @@
 <?php
 
 namespace DMW\DemoBundle\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -43,5 +44,8 @@ class DefaultController extends Controller
     //-- Invocamos a nuestra nueva plantilla, pasando los datos
     return $this->render('DMWDemoBundle:Default:articulo.html.twig', array('articulo' => $articuloSeleccionado));
  }
+    
+    
 }
+
 

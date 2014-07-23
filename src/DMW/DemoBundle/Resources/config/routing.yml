@@ -7,3 +7,4 @@ articulos:
 articulo:
   pattern: /articulo/{id}
   defaults: { _controller: DMWDemoBundle:Default:articulo }
+  

@@ -1,3 +1,9 @@
 dmw_demo_homepage:
     path:     /hello/{name}
     defaults: { _controller: DMWDemoBundle:Default:index }
+articulos:
+  pattern: /articulos
+  defaults: { _controller: DMWDemoBundle:Default:articulos }
+articulo:
+  pattern: /articulo/{id}
+  defaults: { _controller: DMWDemoBundle:Default:articulo }

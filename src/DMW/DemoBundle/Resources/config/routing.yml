@@ -1,0 +1,3 @@
+dmw_demo_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: DMWDemoBundle:Default:index }

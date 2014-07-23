@@ -1,0 +1,7 @@
+parameters:
+#    dmw_demo.example.class: DMW\DemoBundle\Example
+
+services:
+#    dmw_demo.example:
+#        class: %dmw_demo.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

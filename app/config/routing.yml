@@ -1,0 +1,4 @@
+dmw_demo:
+    resource: "@DMWDemoBundle/Resources/config/routing.yml"
+    prefix:   /
+

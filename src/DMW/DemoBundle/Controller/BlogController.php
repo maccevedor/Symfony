@@ -1,6 +1,6 @@
 <?php
 // src/MDW/DemoBundle/Controller/DefaultController.php
-namespace MDW\DemoBundle\Controller;
+namespace DMW\DemoBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,7 +12,7 @@ class BlogController extends Controller
 {
     $articulo = $peticion->get('slug'); // otra forma para obtener comodines, GET o POST
     $metodo = $peticion->getMethod(); //obtenemos si la petición fue por GET o POST
-    return $this->render('MDWDemoBundle:Blog:show.html.twig', array(
+    return $this->render('DMWDemoBundle:Blog:show.html.twig', array(
         'articulo' => $articulo
     ));
 }

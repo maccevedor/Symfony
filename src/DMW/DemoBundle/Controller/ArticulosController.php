@@ -10,6 +10,11 @@ class ArticulosController extends Controller
 {
 	public function listarAction()
 	{
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $articulos = $em->getRepository('DMWDemoBundle:Articles')->findAll();
+
+        return $this->render('DMWDemoBundle:Articulos:listar.html.twig', array('articulos' => $articulos));
 
 	}
 
@@ -32,11 +37,31 @@ class ArticulosController extends Controller
 
 	public function editarAction($id)
 	{
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $articulo = $em->getRepository('DMWDemoBundle:Articles')->find($id);
+
+        $articulo->setTitle('20');
+        $articulo->setUpdated(new \DateTime());
+
+        $em->persist($articulo);
+        $em->flush();
+
+        return $this->render('DMWDemoBundle:Articulos:articulo.html.twig', array('articulo' => $articulo));
 
 	}
 
 	public function borrarAction($id)
 	{
+        $em = $this->getDoctrine()->getEntityManager();
 
+        $articulo = $em->getRepository('DMWDemoBundle:Articles')->find($id);
+
+        $em->remove($articulo);
+        $em->flush();
+
+        return $this->redirect(
+            $this->generateUrl('articulo_listar')
+        );
 	}
 }

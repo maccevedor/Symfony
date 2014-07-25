@@ -12,4 +12,24 @@ use Doctrine\ORM\EntityRepository;
  */
 class ArticlesRepository extends EntityRepository
 {
+    
+    public function findArticlesByAuthorAndTitle($author, $title)
+        {
+            $em = $this->getEntityManager();
+
+            $dql = "select a.id, a.title, c.author
+                from MDWDemoBundle:Comments c
+                join c.article a
+                where a.author=:author
+                and a.title like :title";
+
+            $query = $em->createQuery($dql);
+            $query->setParameter('author', $author);
+            $query->setParameter('title', '%' . $title . '%');
+
+            $articulos = $query->getResult();
+
+            return $articulos;
+        }
+    
 }

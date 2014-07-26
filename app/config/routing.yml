@@ -1,3 +1,7 @@
+umb_virtual_apps:
+    resource: "@UMBVirtualAppsBundle/Resources/config/routing.yml"
+    prefix:   /
+
 dmw_demo:
     resource: "@DMWDemoBundle/Resources/config/routing.yml"
     prefix:   /

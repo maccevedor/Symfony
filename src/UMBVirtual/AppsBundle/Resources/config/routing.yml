@@ -1,0 +1,3 @@
+umb_virtual_apps_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: UMBVirtualAppsBundle:Default:index }

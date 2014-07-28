@@ -4,6 +4,8 @@ namespace DMW\DemoBundle\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use DMW\DemoBundle\Entity\Articles;
+use DMW\DemoBundle\Form\ArticleType;
 
 class DefaultController extends Controller
 {
@@ -46,6 +48,14 @@ class DefaultController extends Controller
  }
     
     
+    public function newAction()
+{
+    $articulo = new Articles();
+    $form = $this->createForm(new ArticleType(), $articulo);
+    return $this->render('DMWDemoBundle:Articulos:new.html.twig', array(
+        'form' => $form->createView(),
+    ));
+}
 }
 
 

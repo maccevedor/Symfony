@@ -22,3 +22,6 @@ articulo_visualizar:
 articulo_borrar:
   pattern:  /articulos/borrar/{id}
   defaults: { _controller: DMWDemoBundle:Articulos:borrar }
+articulo_new:
+  pattern:  /articulos/new
+  defaults: { _controller: DMWDemoBundle:Articulos:new }

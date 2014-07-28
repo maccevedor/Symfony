@@ -5,6 +5,7 @@ namespace DMW\DemoBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use DMW\DemoBundle\Entity\Articles;
+use DMW\DemoBundle\Form\ArticleType;
 
 class ArticulosController extends Controller
 {
@@ -29,6 +30,7 @@ class ArticulosController extends Controller
     $articulo->setUpdated(new \DateTime());
     $articulo->setSlug('articulo-de-ejemplo-1');
     $articulo->setCategory('ejemplo');
+        
         $em = $this->getDoctrine()->getEntityManager();
         $em->persist($articulo);
         $em->flush();
@@ -41,7 +43,7 @@ class ArticulosController extends Controller
 
         $articulo = $em->getRepository('DMWDemoBundle:Articles')->find($id);
 
-        $articulo->setTitle('20');
+        $articulo->setTitle('hola fores');
         $articulo->setUpdated(new \DateTime());
 
         $em->persist($articulo);
@@ -63,5 +65,20 @@ class ArticulosController extends Controller
         return $this->redirect(
             $this->generateUrl('articulo_listar')
         );
+	}
+	public function newAction()
+	{
+    //-- Obtenemos el request que contendrá los datos
+    $request = $this->getRequest();
+
+    $articulo = new Articles();
+    $form = $this->createForm(new ArticleType(), $articulo);
+
+    //-- En caso de que el request haya sido invocado por POST
+    //   procesaremos el formulario
+        return $this->redirect($this->generateURL('articulos'));
+        return $this->render('DMWDemoBundle:Articulos:new.html.twig', array(
+        'form' => $form->createView(),
+    ));
 	}
 }

@@ -27,9 +27,6 @@ fos_user_change_password:
 articulo:
   pattern: /articulo/{id}
   defaults: { _controller: DMWDemoBundle:Default:articulo }
-articulo_listar:
-  pattern:  /articulos/listar
-  defaults: { _controller: DMWDemoBundle:Articulos:listar }
 articulo_crear:
   pattern:  /articulos/crear
   defaults: { _controller: DMWDemoBundle:Articulos:crear }
@@ -45,6 +42,9 @@ articulo_borrar:
 articulo_new:
    pattern: /articulos/new
    defaults: { _controller: DMWDemoBundle:Articulos:new }
+articulo_listar:
+   pattern:  /articulos/listar
+   defaults: { _controller: DMWDemoBundle:Articulos:listar }
 articulos:
    pattern: /articulos/mostrar
    defaults: { _controller: DMWDemoBundle:Default:articulos }

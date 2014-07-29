@@ -18,7 +18,21 @@ class ArticulosController extends Controller
         return $this->render('DMWDemoBundle:Articulos:listar.html.twig', array('articulos' => $articulos));
 
 	}
+	public function newAction()
+	{
+    //-- Obtenemos el request que contendrá los datos
+    $request = $this->getRequest();
 
+    $articulo = new Articles();
+    $form = $this->createForm(new ArticleType(), $articulo);
+
+    //-- En caso de que el request haya sido invocado por POST
+    //   procesaremos el formulario
+        //return $this->redirect($this->generateURL('articulos'));
+        return $this->render('DMWDemoBundle:Articulos:new.html.twig', array(
+        'form' => $form->createView(),
+    ));
+	}
 	public function crearAction()
 	{
     $articulo = new Articles();
@@ -65,20 +79,5 @@ class ArticulosController extends Controller
         return $this->redirect(
             $this->generateUrl('articulo_listar')
         );
-	}
-	public function newAction()
-	{
-    //-- Obtenemos el request que contendrá los datos
-    $request = $this->getRequest();
-
-    $articulo = new Articles();
-    $form = $this->createForm(new ArticleType(), $articulo);
-
-    //-- En caso de que el request haya sido invocado por POST
-    //   procesaremos el formulario
-        return $this->redirect($this->generateURL('articulos'));
-        return $this->render('DMWDemoBundle:Articulos:new.html.twig', array(
-        'form' => $form->createView(),
-    ));
 	}
 }

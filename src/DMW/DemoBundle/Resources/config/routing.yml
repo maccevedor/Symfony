@@ -1,27 +1,4 @@
 dmw_demo_homepage:
   path:     /hello/{name}
   defaults: { _controller: DMWDemoBundle:Default:index }
-articulos:
-  pattern: /articulos
-  defaults: { _controller: DMWDemoBundle:Default:articulos }
-articulo:
-  pattern: /articulo/{id}
-  defaults: { _controller: DMWDemoBundle:Default:articulo }
-articulo_listar:
-  pattern:  /articulos/listar
-  defaults: { _controller: DMWDemoBundle:Articulos:listar }
-articulo_crear:
-  pattern:  /articulos/crear
-  defaults: { _controller: DMWDemoBundle:Articulos:crear }
-articulo_editar:
-  pattern:  /articulos/editar/{id}
-  defaults: { _controller: DMWDemoBundle:Articulos:editar }
-articulo_visualizar:
-  pattern:  /articulos/visualizar/{id}
-  defaults: { _controller: DMWDemoBundle:Articulos:visualizar }
-articulo_borrar:
-  pattern:  /articulos/borrar/{id}
-  defaults: { _controller: DMWDemoBundle:Articulos:borrar }
-articulo_new:
-  pattern:  /articulos/new
-  defaults: { _controller: DMWDemoBundle:Articulos:new }
+

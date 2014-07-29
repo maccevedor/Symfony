@@ -5,7 +5,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use DMW\DemoBundle\Entity\Articles;
-use DMW\DemoBundle\Form\ArticleType;
 
 class DefaultController extends Controller
 {
@@ -46,16 +45,6 @@ class DefaultController extends Controller
     //-- Invocamos a nuestra nueva plantilla, pasando los datos
     return $this->render('DMWDemoBundle:Default:articulo.html.twig', array('articulo' => $articuloSeleccionado));
  }
-    
-    
-    public function newAction()
-{
-    $articulo = new Articles();
-    $form = $this->createForm(new ArticleType(), $articulo);
-    return $this->render('DMWDemoBundle:Articulos:new.html.twig', array(
-        'form' => $form->createView(),
-    ));
-}
 }
 
 

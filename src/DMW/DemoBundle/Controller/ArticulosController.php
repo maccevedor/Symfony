@@ -65,6 +65,9 @@ class ArticulosController extends Controller
             //   problema de que al intentar actualizar el navegador
             //   nos dice que lo datos se deben volver a reenviar. En
             //   este caso iremos a la página del listado de artículos
+            $em = $this->getDoctrine()->getEntityManager();
+            $em->persist($articulo);
+            $em->flush();
             return $this->redirect($this->generateURL('articulo_listar'));
         }
     }

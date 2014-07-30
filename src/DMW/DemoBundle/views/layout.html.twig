@@ -1,0 +1,10 @@
+{% extends '::base.html.twig'  %} {# extendemos del layout por defecto #}
+{% block javascripts %}
+{% endblock javascripts %}
+{% block body %}
+<div>
+    <h1>*** Web de Noticias ***</h1>
+    {# según el patrón de 3 niveles, creamos el bloque de contenido #}
+    {% block content %}{% endblock content %}
+</div>
+{% endblock body%}

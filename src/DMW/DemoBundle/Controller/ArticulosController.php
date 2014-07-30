@@ -122,4 +122,8 @@ class ArticulosController extends Controller
             $this->generateUrl('articulo_listar')
         );
 	}
+    public function verArticulosAction()
+        {
+                return $this->render('DMWDemoBundle:Articulos:ver_articulos.html.twig', array());
+        }
 }

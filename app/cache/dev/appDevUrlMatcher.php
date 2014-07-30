@@ -354,6 +354,21 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // ver_articulos
+        if ($pathinfo === '/ver-articulos') {
+            return array (  '_controller' => 'DMW\\DemoBundle\\Controller\\ArticulosController::verArticulosAction',  '_route' => 'ver_articulos',);
+        }
+
+        // DMWDemoBundle_noticias
+        if ($pathinfo === '/noticias') {
+            return array (  '_controller' => 'DMW\\DemoBundle\\Controller\\NoticeController::indexAction',  '_route' => 'DMWDemoBundle_noticias',);
+        }
+
+        // DMWDemoBundle_noticeView
+        if (0 === strpos($pathinfo, '/leerNoticia') && preg_match('#^/leerNoticia/(?P<notice_id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'DMWDemoBundle_noticeView')), array (  '_controller' => 'DMW\\DemoBundle\\Controller\\NoticeController::noticeViewAction',));
+        }
+
         // _welcome
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

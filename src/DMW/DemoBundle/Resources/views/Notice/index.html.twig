@@ -1,0 +1,30 @@
+{# src/DMW/DemoBundle/Resources/views/Notice/index.html.twig #}
+
+{% extends 'DMWDemoBundle::layout.html.twig'  %}
+{% block content %}
+<div>
+    <p>Noticias recientes</p>
+    <ol>
+        {% for index,notice in notices %}
+        <li><a href="{{ path('DMWDemoBundle_noticeView', {'notice_id': index}) }}">{{notice.title}}</a></li>
+        {% endfor %}
+    </ol>
+    <div id="notice_viewer">
+    {# en esta capa serán cargadas las noticias por ajax #}
+    </div>
+</div>
+{% endblock content %}
+
+{# extendemos el bloque javascript #}
+{% block javascripts %}
+{{parent()}} {# incluimos las declaraciones de script del layout, como jQuery #}
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('a.notice_link').click(function(event){
+        event.preventDefault(); //cancela el comportamiento por defecto
+        $('#notice_viewer').load($(this).attr('href')); //carga por ajax a la capa "notice_viewer"
+    });
+});
+</script>
+{% endblock javascripts %}

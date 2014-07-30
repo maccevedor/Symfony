@@ -48,3 +48,12 @@ articulo_listar:
 articulos:
    pattern: /articulos/mostrar
    defaults: { _controller: DMWDemoBundle:Default:articulos }
+ver_articulos:
+    pattern:  /ver-articulos
+    defaults: { _controller: DMWDemoBundle:Articulos:verArticulos }
+DMWDemoBundle_noticias:
+    pattern:  /noticias
+    defaults: { _controller: DMWDemoBundle:Notice:index }
+DMWDemoBundle_noticeView:
+    pattern:  /leerNoticia/{notice_id}
+    defaults: { _controller: DMWDemoBundle:Notice:noticeView }

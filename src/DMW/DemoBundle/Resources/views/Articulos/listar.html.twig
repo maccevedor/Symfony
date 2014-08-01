@@ -5,6 +5,7 @@
         <th>Titulo</th>
         <th>Autor</th>
         <th>Fecha de Creacion</th>
+        <th>Enviar</th>
     </tr>
     {% for articulo in articulos %}
     <tr>
@@ -12,6 +13,7 @@
         <td>{{ articulo.title }}</td>
         <td>{{ articulo.author }}</td>
         <td>{{ articulo.created | date('d-m-Y') }}</td>
+        <td><input type="button" name="enviar" value="enviar"></td>
     </tr>
     {% endfor %}
 </table>

@@ -35,15 +35,16 @@ class __TwigTemplate_333bf4d9ebcfe0b6b291af02086d2ec85c20fbb602199be15800a933c5d
         // line 7
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery-2.1.1.min.js"), "html", null, true);
         echo "\"></script>
+        <link rel=\"stylesheet\" href=\"css/bootstrap.css\">
     </head>
     <body>
         ";
-        // line 10
-        $this->displayBlock('body', $context, $blocks);
         // line 11
+        $this->displayBlock('body', $context, $blocks);
+        // line 12
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 12
+        // line 13
         echo "    </body>
 </html>
 ";
@@ -55,12 +56,12 @@ class __TwigTemplate_333bf4d9ebcfe0b6b291af02086d2ec85c20fbb602199be15800a933c5d
         echo "Welcome!";
     }
 
-    // line 10
+    // line 11
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 11
+    // line 12
     public function block_javascripts($context, array $blocks = array())
     {
     }
@@ -77,6 +78,6 @@ class __TwigTemplate_333bf4d9ebcfe0b6b291af02086d2ec85c20fbb602199be15800a933c5d
 
     public function getDebugInfo()
     {
-        return array (  64 => 11,  59 => 10,  53 => 5,  47 => 12,  44 => 11,  42 => 10,  36 => 7,  32 => 6,  28 => 5,  22 => 1,);
+        return array (  65 => 12,  60 => 11,  54 => 5,  48 => 13,  45 => 12,  43 => 11,  36 => 7,  32 => 6,  28 => 5,  22 => 1,);
     }
 }

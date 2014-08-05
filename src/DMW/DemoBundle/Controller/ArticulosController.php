@@ -13,9 +13,14 @@ class ArticulosController extends Controller
 	{
         $em = $this->getDoctrine()->getEntityManager();
 
-        $articulos = $em->getRepository('DMWDemoBundle:Articles')->findAll();
+        //$articulos = $em->getRepository('DMWDemoBundle:Articles')->findAll();
+        //$articulos = $em->getRepository('DMWDemoBundle:Articles')->findByTitle("hola");
+        $articulos = $em->createQuery("SELECT p FROM DMWDemoBundle:Articles p")->getResult();
+        
 
         return $this->render('DMWDemoBundle:Articulos:listar.html.twig', array('articulos' => $articulos));
+
+
 
 	}
 	public function newsAction()

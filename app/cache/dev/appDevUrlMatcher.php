@@ -369,6 +369,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'DMWDemoBundle_noticeView')), array (  '_controller' => 'DMW\\DemoBundle\\Controller\\NoticeController::noticeViewAction',));
         }
 
+        // DMWDemoBundle_pdf
+        if ($pathinfo === '/pdf') {
+            return array (  '_controller' => 'DMW\\DemoBundle\\Controller\\ArticulosController::pdfAction',  '_route' => 'DMWDemoBundle_pdf',);
+        }
+
         // _welcome
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

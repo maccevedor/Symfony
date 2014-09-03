@@ -1,0 +1,9 @@
+$this->get('knp_snappy.pdf')->generateFromHtml(
+    $this->renderView(
+        'MyBundle:Foo:bar.html.twig',
+        array(
+            'some'  => $vars
+        )
+    ),
+    '/path/to/the/file.pdf'
+);

@@ -131,4 +131,15 @@ class ArticulosController extends Controller
         {
                 return $this->render('DMWDemoBundle:Articulos:ver_articulos.html.twig', array());
         }
+    public function pdfAction()
+    {
+        
+        $this->get('knp_snappy.pdf')->generateFromHtml(
+    $this->renderView(
+        'DMWDemoBundle:Articulos:bar.html.twig',
+        array()
+    ),
+    '/path/to/the/file.pdf'
+);
+    }
 }

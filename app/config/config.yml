@@ -69,3 +69,13 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: DMW\DemoBundle\Entity\User
+    
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     /usr/local/bin/hola
+        options:    []
+    image:
+        enabled:    true
+        binary:     /usr/local/bin/hola
+        options:    []

@@ -57,3 +57,6 @@ DMWDemoBundle_noticias:
 DMWDemoBundle_noticeView:
     pattern:  /leerNoticia/{notice_id}
     defaults: { _controller: DMWDemoBundle:Notice:noticeView }
+DMWDemoBundle_pdf:
+    pattern:  /pdf
+    defaults: { _controller: DMWDemoBundle:Articulos:pdf}

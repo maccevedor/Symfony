@@ -1,14 +1,14 @@
 # -- Symfony2 -----------------------------------------
-app/bootstrap.php.cache
-app/bootstrap_cache.php.cache
-app/config/parameters.ini
-app/config/parameters.yml
+#app/bootstrap.php.cache
+#app/bootstrap_cache.php.cache
+#app/config/parameters.ini
+#app/config/parameters.yml
 app/cache/*
 app/logs/*
 vendor/*
-web/bundles/*
-web/css/*
-web/js/*
+#web/bundles/*
+#web/css/*
+#web/js/*
 web/uploads/*
 
 # -- Composer -----------------------------------------
